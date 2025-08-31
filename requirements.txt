@@ -1,0 +1,8 @@
+fastapi
+kafka-python
+nltk
+pymongo
+python-dotenv
+requests
+textblob
+uvicorn

@@ -1,0 +1,15 @@
+
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# הורדת משאבים ל-nltk ול-textblob
+RUN python -m nltk.downloader stopwords wordnet omw-1.4 && \
+    python -m textblob.download_corpora
+
+COPY . .
+
+CMD ["python", "main.py"]
